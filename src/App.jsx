@@ -1,12 +1,17 @@
 import "./App.css";
 import Home from "./pages/home/Home";
-import Footer from "./components/footer/Footer";
+import Camera from "./pages/home/Camera/Camera";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Home />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="camera" element={<Camera />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
