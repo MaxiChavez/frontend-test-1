@@ -1,9 +1,18 @@
 import "./Home.css";
 
-import HomeHeader from "../Header/Homeheader";
-import HomeContent from "../../components/content/HomeContent";
+import { useNavigate } from "react-router-dom";
+import HomeHeader from "./Header/HomeHeader";
+import HomeContent from "./Content/HomeContent";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  function NavigateToCamera() {
+    console.log("test...");
+    navigate("/camera");
+  }
+
   return (
     <>
       <HomeHeader />
@@ -14,9 +23,13 @@ const Home = () => {
           <button id="volver">Volver</button>
         </div>
         <div className="buttonsNextBack">
-          <button id="siguiente">Siguiente</button>
+          <button id="siguiente" onClick={() => NavigateToCamera()}>
+            Siguiente
+          </button>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
