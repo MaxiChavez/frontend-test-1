@@ -1,3 +1,5 @@
+import "./Home.css";
+
 import dos from "../../assets/2.png";
 import uno from "../../assets/1.png";
 import cincuenta from "../../assets/50.png";
@@ -9,38 +11,44 @@ const Home = () => {
   return (
     <>
       <section id="main">
-        <h3>Seleciona moneda</h3>
-        <p>
-          Para la correcta medición es nesario el uso de una moneda en el centro
-          de la palmda de tu mano.
+        <h3 id="selecCoin">Selecciona moneda</h3>
+        <p className="pMain">
+          Para la correcta medición es necesario el uso de una moneda en el
+          centro de la palma de tu mano.
         </p>
-        <h2> Puedes usar una de estas monedas </h2>
+        <p className="pSubTitle"> Puedes usar una de estas monedas </p>
         <div className="coins">
           <div>
-            <img src={dos} alt="moneda 2 Euros" />
+            <img className="monedas" src={dos} alt="moneda 2 Euros" />
           </div>
 
           <div>
-            <img src={uno} alt="moneda un Euro" />
+            <img className="monedas" src={uno} alt="moneda un Euro" />
           </div>
           <div>
-            <img src={cincuenta} alt="moneda 50 centimos" />
+            <img className="monedas" src={cincuenta} alt="moneda 50 centimos" />
           </div>
           <div>
-            <img src={veinte} alt="moneda veinte centimos" />
+            <img
+              className="monedas"
+              src={veinte}
+              alt="moneda veinte centimos"
+            />
           </div>
           <div>
-            <img src={cinco} alt="moneda 5 centimos" />
+            <img className="monedas" src={cinco} alt="moneda 5 centimos" />
           </div>
         </div>
-        <h3>Coloca la moneda en el centro de la palma de tu mano</h3>
+        <p className="pSubTitle">
+          Coloca la moneda en el centro de la palma de tu mano
+        </p>
+
         <div className="hand">
-          <img id="imgHand"></img>
+          <img id="imgHand" src={hand}></img>
         </div>
-        <h3>¿Cómo te gusta llevar el anillo?</h3>
-        <div>
-          <img src={hand} alt="Mano con moneda" />
-        </div>
+
+        <p className="pSubTitle">¿Cómo te gusta llevar el anillo?</p>
+
         <div>
           <label htmlFor="ajustado">Ajustado</label>
           <input
@@ -50,7 +58,15 @@ const Home = () => {
             value="ajustado"
           />
 
-          <div></div>
+          <div>
+            <label htmlFor="suelto">Suelto</label>
+            <input
+              id="suelto"
+              type="radio"
+              name="estilo_anillo"
+              value="suelto"
+            />
+          </div>
         </div>
       </section>
       <div className="buttonsNextBack">
