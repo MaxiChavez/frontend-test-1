@@ -1,9 +1,10 @@
 import logoFooter from "../../assets/LogoFooter1.png";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <img src={logoFooter} alt="Logo empresarial" />
+    <div id="footer">
+      <img id="logoFooter" src={logoFooter} alt="Logo empresarial" />
     </div>
   );
 };

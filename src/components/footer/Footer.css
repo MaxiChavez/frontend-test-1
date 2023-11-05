@@ -1,0 +1,14 @@
+#logoFooter {
+  width: 148px;
+  height: 14;
+  object-fit: contain;
+}
+#footer {
+  padding-top: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #eaecf0;
+  padding: 16px;
+  margin-top: 1em;
+}

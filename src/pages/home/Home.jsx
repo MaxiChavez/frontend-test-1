@@ -6,6 +6,8 @@ import cincuenta from "../../assets/50.png";
 import veinte from "../../assets/20.png";
 import cinco from "../../assets/5.png";
 import hand from "../../assets/hand.png";
+import icon from "../../assets/icon.png";
+import cheking from "../../assets/checking.png";
 
 const Home = () => {
   return (
@@ -49,29 +51,32 @@ const Home = () => {
 
         <p className="pSubTitle">¿Cómo te gusta llevar el anillo?</p>
 
-        <div>
-          <label htmlFor="ajustado">Ajustado</label>
-          <input
-            id="ajustado"
-            type="radio"
-            name="estilo_anillo"
-            value="ajustado"
-          />
+        <div className="pruebaButton">
+          <div className="optionCheck">
+            <p>Ajustado</p>
+          </div>
+          <div className="check">
+            <img src={cheking} alt="icon check" />
+          </div>
+        </div>
 
-          <div>
-            <label htmlFor="suelto">Suelto</label>
-            <input
-              id="suelto"
-              type="radio"
-              name="estilo_anillo"
-              value="suelto"
-            />
+        <div className="pruebaButton">
+          <div className="optionCheck">
+            <p>Suelto</p>
+          </div>
+          <div className="check">
+            <img src={cheking} alt="icon check" />
           </div>
         </div>
       </section>
-      <div className="buttonsNextBack">
-        <button>Volver</button>
-        <button>Siguiente</button>
+
+      <div id="buttonContinue">
+        <div className="buttonsNextBack">
+          <button id="volver">Volver</button>
+        </div>
+        <div className="buttonsNextBack">
+          <button id="siguiente">Siguiente</button>
+        </div>
       </div>
     </>
   );

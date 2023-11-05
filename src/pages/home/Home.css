@@ -19,7 +19,7 @@ font-family: "Open Sans", sans-serif; */
   text-align: center;
 }
 .pMain {
-  font: inter;
+  font-family: "Inter", sans-serif;
 
   line-height: 20px;
   size: 12px;
@@ -68,4 +68,92 @@ p {
   height: 80%;
   width: 40%;
   object-fit: contain;
+}
+
+.pruebaButton {
+  border: 1px solid #c4c4c8;
+  border-radius: 12px;
+  display: grid;
+  justify-items: end;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 10px;
+}
+.optionCheck {
+  width: 80%;
+  padding-left: 10px;
+}
+.check {
+  height: 1.5em;
+  width: 1.5em;
+  border: 1px solid #c4c4c8;
+  border-radius: 50%;
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+}
+
+/* .check:hover {
+  background-color: #ec6276;
+} */
+
+.check {
+  height: 1.5em;
+  width: 1.5em;
+  border: 1px solid #c4c4c8;
+  border-radius: 50%;
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.check:hover {
+  border: none;
+}
+.check img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin: auto;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.check:hover img {
+  opacity: 1;
+}
+
+#buttonContinue {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.buttonsNextBack button {
+  width: 100px;
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#volver {
+  width: 166.5px;
+  height: 44px;
+  border: 1px solid #ec6276;
+  background-color: #fff;
+}
+
+#siguiente {
+  width: 166.5px;
+  height: 44px;
+  border: none;
+  background-color: #ec6276;
+  color: #fff;
 }
