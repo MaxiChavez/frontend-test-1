@@ -3,6 +3,7 @@ body {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  max-width: 100vw;
 }
 
 /* font-family: "Barlow Semi Condensed", sans-serif;
@@ -15,18 +16,21 @@ font-family: "Open Sans", sans-serif; */
 }
 
 #selecCoin {
-  font-size: 18px;
+  font-size: 19px;
+  font-weight: 600;
   text-align: center;
 }
 .pMain {
   font-family: "Inter", sans-serif;
 
   line-height: 20px;
-  size: 12px;
+  size: 14px;
   align-items: center;
-  color: #344054;
+  color: #475467;
   text-align: justify;
   text-align-last: center;
+  gap: 16px;
+  font-weight: 400;
 }
 
 .coins {
@@ -54,6 +58,7 @@ p {
   color: #344054;
 }
 .pSubTitle {
+  font-family: "Inter", sans-serif;
   font-weight: 540;
 }
 .hand {
