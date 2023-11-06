@@ -1,8 +1,8 @@
 import Webcam from "react-webcam";
 import "./CameraStyle.css";
-import { Navigate } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
-import Footer from "../../../components/footer/Footer";
+
 import logo from "../../../assets/LogoFooter1.png";
 
 const videoConstraints = {

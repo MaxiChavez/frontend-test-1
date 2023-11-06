@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const attributeSlice = createSlice({
+const attributeSlice = createSlice({
   name: "Attributes",
   initialState: {
     selectedCoin: null,
@@ -10,18 +10,13 @@ export const attributeSlice = createSlice({
   reducers: {
     setAttributes: (state, action) => {
       const { selectedCoin, coinValue, isTight } = action.payload;
-      return {
-        ...state,
-        selectedCoin: selectedCoin,
-        coinValue: coinValue,
-        isTight: isTight,
-      };
+      state.selectedCoin = selectedCoin;
+      state.coinValue = coinValue;
+      state.isTight = isTight;
     },
   },
 });
 
 export const { setAttributes } = attributeSlice.actions;
-
-export const selectAttributes = (state) => state.Attributes;
 
 export default attributeSlice.reducer;
