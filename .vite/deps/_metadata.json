@@ -1,0 +1,35 @@
+{
+  "hash": "75a1b665",
+  "browserHash": "5b4e980d",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "ff30d272",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "113b6ead",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "9c61a338",
+      "needsInterop": false
+    },
+    "react-webcam": {
+      "src": "../../node_modules/react-webcam/dist/react-webcam.js",
+      "file": "react-webcam.js",
+      "fileHash": "c62aa8dd",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-L7APZED3": {
+      "file": "chunk-L7APZED3.js"
+    }
+  }
+}
