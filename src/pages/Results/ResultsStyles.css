@@ -1,0 +1,46 @@
+#results {
+  width: 20em;
+  height: 20em;
+  border: 2px solid #ec6276;
+  border-radius: 12px;
+  margin-top: 2em;
+}
+#reaultsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#titleResults {
+  text-align: center;
+  font-size: 18px;
+}
+
+#buttonResults {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+#volverResults {
+  width: 196.5px;
+  height: 44px;
+  border: 1px solid #ec6276;
+  background-color: #ec6276;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+#imgResults {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20em;
+  margin-top: 2em;
+}
+
+#imgLogoResults {
+  width: 15em;
+  height: 5em;
+}
