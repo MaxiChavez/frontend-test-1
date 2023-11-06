@@ -1,37 +1,57 @@
-body{
-    margin: 0;
-    padding: 0;
+#camera {
+  width: 20em;
+  height: 30em;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 2px solid #ec6276;
+  margin-top: 3em;
+  margin-bottom: 1em;
+
+  object-fit: cover;
+  object-position: center;
 }
-#camera{
-    width: "100%";
-    height: "100%"; 
-    left: "50%";
-    position: absolute;
-    z-index: 0;
-    margin-left: "-50%";
-    object-fit: "cover";
-    object-position: "center";
+#pageCamera {
+  height: 95vh;
+  width: 95vw;
+  box-sizing: border-box;
 }
-#screenshotButton{
-    position: absolute;
-    z-index: 1;
-    right: 20px;
-    margin: auto;
-    width: 166.5px;
-    
-    height: 44px;
-    border: none;
-    background-color: #ec6276;
-    color: #fff;
-    border-radius: 12px;
+#screenshotButton {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  top: 580px;
+
+  width: 156.5px;
+
+  height: 44px;
+  border: none;
+  background-color: #ec6276;
+  color: #fff;
+  border-radius: 12px;
 }
-#returnButton{
-    position: absolute;
-    z-index: 1;
-    width: 166.5px;
-    height: 44px;
-    border: none;
-    background-color: #ec6276;
-    color: #fff;
-    border-radius: 12px;
+#returnButton {
+  position: absolute;
+  top: 580px;
+
+  z-index: 1;
+  width: 156.5px;
+  height: 44px;
+  border: none;
+  background-color: #ec6276;
+  color: #fff;
+  border-radius: 12px;
+}
+
+#logoCamera {
+  display: flex;
+  align-items: center;
+}
+#camLogo {
+  margin-top: 7em;
+  margin-left: 3em;
+
+  width: 15em;
 }

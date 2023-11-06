@@ -2,6 +2,8 @@ import Webcam from "react-webcam";
 import "./CameraStyle.css";
 import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../../components/footer/Footer";
+import logo from "../../../assets/LogoFooter1.png";
 
 const videoConstraints = {
   facingMode: "user",
@@ -11,41 +13,37 @@ export const Camera = () => {
   const navigate = useNavigate();
   return (
     <>
-      <button
-        id="returnButton"
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Volver
-      </button>
-      <Webcam
-        id="camera"
-        audio={false}
-        screenshotFormat="image/jpeg"
-        videoConstraints={videoConstraints}
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          left: "50%",
-          marginLeft: "-50%",
-          objectFit: "cover",
-          objectPosition: "center",
-        }}
-      >
-        {({ getScreenshot }) => (
-          <button
-            id="screenshotButton"
-            onClick={() => {
-              const imageSrc = getScreenshot();
-              console.log(imageSrc);
-            }}
-          >
-            Capturar imagen
-          </button>
-        )}
-      </Webcam>
+      <div id="pageCamera">
+        <button
+          id="returnButton"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Volver
+        </button>
+        <Webcam
+          id="camera"
+          audio={false}
+          screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
+        >
+          {({ getScreenshot }) => (
+            <button
+              id="screenshotButton"
+              onClick={() => {
+                const imageSrc = getScreenshot();
+                console.log(imageSrc);
+              }}
+            >
+              Capturar imagen
+            </button>
+          )}
+        </Webcam>
+        <div id="logoCamera">
+          <img id="camLogo" src={logo}></img>
+        </div>
+      </div>
     </>
   );
 };
