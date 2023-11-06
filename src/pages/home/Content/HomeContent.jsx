@@ -27,24 +27,31 @@ const HomeContent = () => {
     setIsAjustadoChecked(false);
   };
 
+  const [selectedCoin, setSelectedCoin] = useState(null);
+
+  const handleCoinClick = (coin) => {
+    console.log(coin);
+    setSelectedCoin(coin);
+  };
+
   return (
     <section id="main">
       <p className="subTitle"> Puedes usar una de estas monedas </p>
       <div className="coins">
-        <div>
+        <div onClick={() => handleCoinClick("2 Euros")}>
           <img className="monedas" src={dos} alt="moneda 2 Euros" />
         </div>
 
-        <div>
+        <div onClick={() => handleCoinClick("1 Euro")}>
           <img className="monedas" src={uno} alt="moneda un Euro" />
         </div>
-        <div>
+        <div onClick={() => handleCoinClick("50 Centimos")}>
           <img className="monedas" src={cincuenta} alt="moneda 50 centimos" />
         </div>
-        <div>
+        <div onClick={() => handleCoinClick("20 Centimos")}>
           <img className="monedas" src={veinte} alt="moneda veinte centimos" />
         </div>
-        <div>
+        <div onClick={() => handleCoinClick("5 Centimos")}>
           <img className="monedas" src={cinco} alt="moneda 5 centimos" />
         </div>
       </div>
