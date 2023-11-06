@@ -1,7 +1,7 @@
 import Webcam from "react-webcam";
 import "./CameraStyle.css";
-
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import logo from "../../../assets/LogoFooter1.png";
 
