@@ -104,3 +104,38 @@ p {
   opacity: 0.7;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* 
+  botones  */
+
+#buttonContinue {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.buttonsNextBack button {
+  width: 100px;
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#volver {
+  width: 166.5px;
+  height: 44px;
+  border: 1px solid #ec6276;
+  background-color: #fff;
+}
+
+#siguiente {
+  width: 166.5px;
+  height: 44px;
+  border: none;
+  background-color: #ec6276;
+  color: #fff;
+}
