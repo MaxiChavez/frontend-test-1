@@ -1,3 +1,10 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
 #camera {
   width: 20em;
   height: 30em;
@@ -14,14 +21,15 @@
   object-position: center;
 }
 #pageCamera {
-  height: 95vh;
-  width: 95vw;
+  height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 #screenshotButton {
   position: absolute;
   z-index: 1;
-  right: 20px;
+  right: 1100px;
   top: 580px;
 
   width: 156.5px;
@@ -48,10 +56,28 @@
 #logoCamera {
   display: flex;
   align-items: center;
+  width: 10em;
 }
 #camLogo {
   margin-top: 7em;
   margin-left: 3em;
 
   width: 15em;
+}
+
+@media (max-width: 768px) {
+  #screenshotButton {
+    position: absolute;
+    z-index: 1;
+    right: 18px;
+    top: 580px;
+
+    width: 156.5px;
+
+    height: 44px;
+    border: none;
+    background-color: #ec6276;
+    color: #fff;
+    border-radius: 12px;
+  }
 }

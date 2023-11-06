@@ -4,23 +4,24 @@ const attributeSlice = createSlice({
   name: "Attributes",
   initialState: {
     selectedCoin: null,
-    coinValue: null,
     isTight: false,
+    imgCam: "",
   },
   reducers: {
     setAttributes: (state, action) => {
-      const { selectedCoin, coinValue, isTight } = action.payload;
+      const { selectedCoin, isTight, imgCam } = action.payload;
       state.selectedCoin = selectedCoin;
-      state.coinValue = coinValue;
       state.isTight = isTight;
+      state.imgCam = imgCam;
     },
     saveData: (state) => {
       state.savedData = {
         selectedCoin: state.selectedCoin,
-        coinValue: state.coinValue,
         isTight: state.isTight,
+        imgCam: state.imgCam,
       };
       console.log("Datos guardados en Redux:", state.savedData);
+
       // state.selectedCoin = null;
       // state.coinValue = null;
       // state.isTight = false;
@@ -28,6 +29,9 @@ const attributeSlice = createSlice({
   },
 });
 
+export const logState = (state) => {
+  console.log("Estado actual de Redux:", state);
+};
 export const { setAttributes, saveData } = attributeSlice.actions;
 
 export default attributeSlice.reducer;
