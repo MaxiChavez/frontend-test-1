@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const attributeSlice = createSlice({
   name: "Attributes",
   initialState: {
     selectedCoin: null,
     isTight: false,
-    imgCam: "",
+    imgCam: null,
   },
   reducers: {
     setAttributes: (state, action) => {
@@ -18,6 +18,14 @@ const attributeSlice = createSlice({
     },
   },
 });
+
+export const selectAttributes = createSelector(
+  (state) => state.selectedCoin,
+  (state) => state.isTight,
+  (state) => state.imgCam,
+  (selectedCoin, isTight, imgCam) => ({ selectedCoin, isTight, imgCam })
+);
+// export const { selectedCoin, isTight, imgCam } = attributeSlice.actions;
 
 export const logState = (state) => {
   console.log("Estado actual de Redux:", state);

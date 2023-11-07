@@ -3,10 +3,13 @@ import "./CameraStyle.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/LogoFooter1.png";
 import { logState } from "../../../redux/atributesSlice";
-import { setImage } from "../../../redux/atributesSlice";
+import { setImage, selectAttributes } from "../../../redux/atributesSlice";
 //importo RDX
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
+// import { selectedCoin, isTight, imgCam } from "../../../redux/atributesSlice";
 import { store } from "../../../redux/store";
+import { fetchApi } from "../../../services/apiCalls";
 
 const videoConstraints = {
   facingMode: "user",
@@ -15,11 +18,27 @@ const videoConstraints = {
 export const Camera = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const attributes = useSelector(selectAttributes);
 
   //handle
   const handleStringCapture = (base64) => {
     console.log("imgString");
     dispatch(setImage(base64));
+  };
+
+  // //Traigo la informacion de redux
+  // const moneda = useSelector(selectedCoin);
+  // const ajustado = useSelector(isTight);
+  // const baseSeisCuatro = useSelector(imgCam);
+
+  const calculateParam = async () => {
+    try {
+      const { selectedCoin, isTight, imgCam } = attributes;
+      const response = await fetchApi(selectedCoin, isTight, imgCam);
+      console.log("Respuesta de la api;", response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -47,6 +66,7 @@ export const Camera = () => {
                 handleStringCapture(imageSrc);
                 console.log(imageSrc);
                 logState(store.getState());
+                calculateParam();
               }}
             >
               Capturar imagen

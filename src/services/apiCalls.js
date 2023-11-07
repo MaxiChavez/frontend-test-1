@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const apiUrl =
-  "https://test.aitaca.io/Aitaca/1.0.0/ui/#/default/extracts_measurements_from_input_images_measurements_extraction_post";
+const apiUrl = "https://test.aitaca.io/Aitaca/1.0.0/ui/";
 
 const apiKey = "maximiliano";
 
