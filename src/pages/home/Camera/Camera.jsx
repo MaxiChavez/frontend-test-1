@@ -5,8 +5,7 @@ import logo from "../../../assets/LogoFooter1.png";
 import { logState } from "../../../redux/atributesSlice";
 import { setImage } from "../../../redux/atributesSlice";
 //importo RDX
-import { useDispatch, useSelector } from "react-redux";
-import { setAttributes } from "../../../redux/atributesSlice";
+import { useDispatch } from "react-redux";
 import { store } from "../../../redux/store";
 
 const videoConstraints = {
@@ -14,10 +13,7 @@ const videoConstraints = {
 };
 
 export const Camera = () => {
-  const moneda = useSelector((state) => state.selectedCoin);
-  const ajustado = useSelector((state) => state.isTight);
   const dispatch = useDispatch();
-  const imgCamInRedux = useSelector((state) => state.imgCam);
   const navigate = useNavigate();
 
   //handle
