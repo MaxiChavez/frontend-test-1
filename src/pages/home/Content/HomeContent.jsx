@@ -7,7 +7,6 @@ import cincuenta from "../../../assets/50.png";
 import veinte from "../../../assets/20.png";
 import cinco from "../../../assets/5.png";
 import hand from "../../../assets/hand.png";
-import { saveData } from "../../../redux/atributesSlice";
 import checking from "../../../assets/checking.png";
 import { useDispatch } from "react-redux";
 import { setAttributes } from "../../../redux/atributesSlice";
@@ -17,28 +16,23 @@ const HomeContent = () => {
   const dispatch = useDispatch();
 
   const [selectedCoin, setSelectedCoin] = useState(null);
-  const [isAjustadoChecked, setIsAjustadoChecked] = useState(false);
-  const [isSueltoChecked, setIsSueltoChecked] = useState(false);
+  const [isTight, setIsTight] = useState(true);
 
-  const handleAjustadoClick = () => {
-    setIsAjustadoChecked(!isAjustadoChecked);
-    setIsSueltoChecked(false);
-  };
 
-  const handleSueltoClick = () => {
-    setIsSueltoChecked(!isSueltoChecked);
-    setIsAjustadoChecked(false);
-  };
+  const handleIsTight = (value) => {
+    setIsTight(value);
+    dispatch(setAttributes({ isTight: value }));
+  }
 
   const handleCoinClick = (coin) => {
     console.log(coin);
-    dispatch(setAttributes({ selectedCoin: coin, isTight: isAjustadoChecked }));
     setSelectedCoin(coin);
+    dispatch(setAttributes({ selectedCoin: coin}));
   };
 
   const NavigateToCamera = () => {
-    dispatch(saveData());
-    console.log("datos guardados en redux");
+    //dispatch(saveData());
+    dispatch(setAttributes({ selectedCoin, isTight }));
     navigate("/camera");
   };
 
@@ -48,27 +42,27 @@ const HomeContent = () => {
         <p className="subTitle">Puedes usar una de estas monedas</p>
         <div className="coins">
           <div
-            onClick={() => handleCoinClick("2.00")}
-            className={`monedas ${selectedCoin === "2.00" ? "selected" : ""}`}
+            onClick={() => handleCoinClick(2.00)}
+            className={`monedas ${selectedCoin === 2.00 ? "selected" : ""}`}
           >
             <img className="monedas" src={dos} alt="moneda 2 Euros" />
           </div>
 
           <div
-            onClick={() => handleCoinClick("1.00")}
-            className={`monedas ${selectedCoin === "1.00" ? "selected" : ""}`}
+            onClick={() => handleCoinClick(1.00)}
+            className={`monedas ${selectedCoin === 1.00 ? "selected" : ""}`}
           >
             <img className="monedas" src={uno} alt="moneda un Euro" />
           </div>
           <div
-            onClick={() => handleCoinClick("0.50")}
-            className={`monedas ${selectedCoin === "0.50" ? "selected" : ""}`}
+            onClick={() => handleCoinClick(0.50)}
+            className={`monedas ${selectedCoin === 0.50 ? "selected" : ""}`}
           >
             <img className="monedas" src={cincuenta} alt="moneda 50 centimos" />
           </div>
           <div
-            onClick={() => handleCoinClick("0.20")}
-            className={`monedas ${selectedCoin === "0.20" ? "selected" : ""}`}
+            onClick={() => handleCoinClick(0.20)}
+            className={`monedas ${selectedCoin === 0.20 ? "selected" : ""}`}
           >
             <img
               className="monedas"
@@ -77,8 +71,8 @@ const HomeContent = () => {
             />
           </div>
           <div
-            onClick={() => handleCoinClick("0.05")}
-            className={`monedas ${selectedCoin === "0.05" ? "selected" : ""}`}
+            onClick={() => handleCoinClick(0.05)}
+            className={`monedas ${selectedCoin === 0.05 ? "selected" : ""}`}
           >
             <img className="monedas" src={cinco} alt="moneda 5 centimos" />
           </div>
@@ -95,33 +89,33 @@ const HomeContent = () => {
 
         <div
           className={
-            isAjustadoChecked
+            isTight
               ? "pruebaButton checkedButton clicked"
               : "pruebaButton"
           }
-          onClick={handleAjustadoClick}
+          onClick={() => handleIsTight(true)}
         >
           <div className="optionCheck">
             <p>Ajustado</p>
           </div>
           <div className="check">
-            {isAjustadoChecked && <img src={checking} alt="icon check" />}
+            {isTight && <img src={checking} alt="icon check" />}
           </div>
         </div>
 
         <div
           className={
-            isSueltoChecked
-              ? "pruebaButton checkedButton clicked"
-              : "pruebaButton"
+            isTight
+              ? "pruebaButton"
+              : "pruebaButton checkedButton clicked"
           }
-          onClick={handleSueltoClick}
+          onClick={() => handleIsTight(false)}
         >
           <div className="optionCheck">
             <p>Suelto</p>
           </div>
           <div className="check">
-            {isSueltoChecked && <img src={checking} alt="icon check" />}
+            {!isTight && <img src={checking} alt="icon check" />}
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import attributeReducer from "./atributesSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["attributes"],
+  whitelist: ["Attributes"],
 };
 
 const persistedReducer = persistReducer(persistConfig, attributeReducer);
