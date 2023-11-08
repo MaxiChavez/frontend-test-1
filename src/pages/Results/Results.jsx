@@ -1,16 +1,26 @@
 import "./ResultsStyles.css";
 import Logo from "../../assets/LogoFooter1.png";
-import { useNavigate } from "react-router-dom";
-import Camera from "../home/Camera/Camera";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Results = () => {
+  const location = useLocation();
   const navigate = useNavigate();
+  const resultData = location.state ? location.state.resultData : null;
+
+  if (!resultData) {
+    return (
+      <div>
+        <p>No tenemos datos de resultado</p>
+      </div>
+    );
+  }
 
   return (
     <>
       <div id="resultsDiv">
         <div id="results">
           <h3 id="titleResults">Los resultados son:</h3>
+          <p>{resultData}</p>
         </div>
       </div>
 

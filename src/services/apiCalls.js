@@ -3,19 +3,20 @@ import axios from "axios";
 const apiUrl = "https://test.aitaca.io/Aitaca/1.0.0/calculator";
 
 export const fetchApi = async (selectedCoin, isTight, imgCam) => {
-  const dataRequest = {
-    coin: selectedCoin,
-    fitting: isTight ? "fitted" : "loose",
-  };
+  const fitting = isTight ? "fitted" : "loose";
 
-  const requestBody = {
-    ...dataRequest,
-    hand: imgCam,
-  };
+  const params = new URLSearchParams();
+  params.append("coin", selectedCoin);
+  params.append("fitting", fitting);
 
   const headers = {
     "Content-Type": "application/json",
     "x-api-key": "maxi",
   };
-  return axios.post(apiUrl, requestBody, { headers });
+
+  return axios.post(
+    `${apiUrl}?${params.toString()}`,
+    { hand: imgCam },
+    { headers }
+  );
 };

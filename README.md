@@ -19,13 +19,14 @@
 
 ## Objetivo 🎯
 
-El objetivo de este proyecto de Programación web es crear una página para uso en dispositivos moviles, que permita definar dos parametros (Coin y Fitting), tener acceso a la camara para poder enviar una foto en base64 a una Api junto los otros dos parametros.
+El objetivo de este proyecto es : Crear una página web para uso en dispositivos moviles, usando React que permita definar dos parametros (Coin y Fitting), tener acceso a la camara para poder enviar una foto en base64 a una Api junto los otros dos parametros y esta devuelva la respuesta la Api.
 
 ## Sobre el proyecto 🔎
 
 En este proyecto, se ha utilizado Vite como herramienta de desarrollo, React como biblioteca para construir la interfaz y JavaScript como lenguaje de programación. Además, se ha implementado el patrón de arquitectura de datos Redux para una gestión eficiente del estado de la aplicación.
 
 Para el envio de datos (post), se ha utilizado programación asíncrona mediante la librería Axios.
+Para la gestion de la camara use react-webcam.
 
 Se ha dado especial énfasis a la parte visual del proyecto para respetar un diseño ofrecido por la empresa en Figma. Se utilizo Css vanilla para gestionar los estilos.
 
@@ -87,7 +88,7 @@ Este proyecto se encuentra bajo licencia de "Maxi Chavez"
 
 Para conseguir mi objetivo he recopilado información de:
 
-- Ejemplos del Bootcamp
+- Ejemplos de projectos anteriores.
 - Documentacion oficial.
 - ...
 
