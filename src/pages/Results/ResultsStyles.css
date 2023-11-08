@@ -4,6 +4,9 @@
   border: 2px solid #ec6276;
   border-radius: 12px;
   margin-top: 2em;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 26px;
 }
 #reaultsDiv {
   display: flex;

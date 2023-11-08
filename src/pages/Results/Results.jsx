@@ -17,11 +17,13 @@ const Results = () => {
 
   return (
     <>
-      <div id="resultsDiv">
-        <div id="results">
-          <h3 id="titleResults">Los resultados son:</h3>
-          <p>{resultData}</p>
-        </div>
+      <div id="results">
+        <h3 id="titleResults">Los resultados son:</h3>
+        <p>Índice: {resultData.index}</p>
+        <p>Medio: {resultData.middle}</p>
+        <p>Anular: {resultData.ring}</p>
+        <p>Meñique: {resultData.pinky}</p>
+        <p>Pulgar: {resultData.thumb}</p>
       </div>
 
       <div id="buttonResults" onClick={() => navigate("/")}>
