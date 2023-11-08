@@ -1,13 +1,10 @@
 import Webcam from "react-webcam";
 import "./CameraStyle.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/LogoFooter1.png";
-import { logState } from "../../../redux/atributesSlice";
 import { setImage, selectAttributes } from "../../../redux/atributesSlice";
-//importo RDX
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../../redux/store";
 import { fetchApi } from "../../../services/apiCalls";
 
 const videoConstraints = {
@@ -19,6 +16,7 @@ export const Camera = () => {
   const navigate = useNavigate();
   const attributes = useSelector(selectAttributes);
   const [apiResult, setApiResult] = useState(null);
+  const [imgCam, setImgCam] = useState(null);
 
   const navigateToResults = () => {
     if (apiResult !== null) {
@@ -26,22 +24,21 @@ export const Camera = () => {
     }
   };
 
-  //handle
   const handleCapture = (imageSrc) => {
     console.log("imgString");
     dispatch(setImage(imageSrc));
+    setImgCam(imageSrc);
   };
 
   const calculateParam = async () => {
     try {
-      const { selectedCoin, isTight, imgCam } = attributes;
+      const { selectedCoin, isTight } = attributes;
 
       if (imgCam !== null) {
         const response = await fetchApi(selectedCoin, isTight, imgCam);
         console.log("Respuesta de la API:", response.data);
         setApiResult(response.data);
         navigateToResults();
-        //  navigate("/results", { state: { resultData: response.data } });
       } else {
         console.error("Error: imgCam es null");
       }
@@ -49,6 +46,18 @@ export const Camera = () => {
       console.error("Error:", error);
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (imgCam !== null) {
+        calculateParam();
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [imgCam, attributes]);
 
   return (
     <>
@@ -74,8 +83,6 @@ export const Camera = () => {
                 const imageSrc = getScreenshot();
                 handleCapture(imageSrc);
                 console.log(imageSrc);
-                logState(store.getState());
-                calculateParam();
               }}
             >
               Capturar imagen
