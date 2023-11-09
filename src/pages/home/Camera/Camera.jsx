@@ -70,25 +70,27 @@ export const Camera = () => {
         >
           Volver
         </button>
-        <Webcam
-          id="camera"
-          audio={false}
-          screenshotFormat="image/jpeg"
-          videoConstraints={videoConstraints}
-        >
-          {({ getScreenshot }) => (
-            <button
-              id="screenshotButton"
-              onClick={() => {
-                const imageSrc = getScreenshot();
-                handleCapture(imageSrc);
-                console.log(imageSrc);
-              }}
-            >
-              Capturar imagen
-            </button>
-          )}
-        </Webcam>
+        <div id="web">
+          <Webcam
+            id="camera"
+            audio={false}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          >
+            {({ getScreenshot }) => (
+              <button
+                id="screenshotButton"
+                onClick={() => {
+                  const imageSrc = getScreenshot();
+                  handleCapture(imageSrc);
+                  console.log(imageSrc);
+                }}
+              >
+                Capturar imagen
+              </button>
+            )}
+          </Webcam>
+        </div>
         <div id="logoCamera">
           <img id="camLogo" src={logo}></img>
         </div>

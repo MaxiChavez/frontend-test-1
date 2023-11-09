@@ -140,3 +140,18 @@ p {
   background-color: #ec6276;
   color: #fff;
 }
+
+@media (min-width: 768px) {
+  #main {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+
+  .buttonsNextBack button {
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  .subTitle {
+    text-align: center;
+  }
+}

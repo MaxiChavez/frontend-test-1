@@ -12,6 +12,7 @@
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#webgrafia">Webgrafia</a></li>
     <li><a href="#desarrollo">Desarrollo</a></li>
+    <li><a href="#futuras-funcionalidades">Futuras funcionalidades</a></li>
     <li><a href="#agradecimientos">Agradecimientos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ol>
@@ -28,7 +29,7 @@ En este proyecto, se ha utilizado Vite como herramienta de desarrollo, React com
 Para el envio de datos (post), se ha utilizado programación asíncrona mediante la librería Axios.
 Para la gestion de la camara use react-webcam.
 
-Se ha dado especial énfasis a la parte visual del proyecto para respetar un diseño ofrecido por la empresa en Figma. Se utilizo Css vanilla para gestionar los estilos.
+Se ha dado especial énfasis a la parte visual del proyecto para respetar un diseño en Figma ofrecido por la empresa, utilizando el enfoque de desarrollo Mobile First (principalmente en : IPhone 12 pro como estandar). Se utilizo Css vanilla para gestionar los estilos.
 
 El proyecto busca cumplir con los requisitos solicitados para el Test.
 
@@ -55,8 +56,14 @@ El proyecto busca cumplir con los requisitos solicitados para el Test.
 
 ## Vistas
 
-Landing
+Landing.
 <img src="./src/assets/ViewAiteca.png">
+
+Cam.
+<img src="./src/assets/Cam-View.png">
+
+Results.
+<img src="./src/assets/Results-view.png">
 
 ## Contribuciones
 
@@ -96,6 +103,9 @@ Para conseguir mi objetivo he recopilado información de:
 
 - Postman => Para probar la api.
 - Vite => Para iniciar el projecto (https://vitejs.dev/)
+- React-webcam
+- Postman
+- Axios
 
 ## Desarrollo:
 
@@ -104,6 +114,13 @@ const developer = "MaxiChavez";
 
 console.log("Desarrollado por: " + developer);
 ```
+
+## Futuras funcionalidades
+
+✅ Renderizacion de la respuesta de la Api  
+⬜ Mensajes de error al no seleccionar parametros (Coin & Fitting)  
+⬜ Opcion volver a tomar la fotografia.
+⬜ ...
 
 ## Agradecimientos:
 
