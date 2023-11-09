@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Results = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const resultData = location.state ? location.state.resultData : null;
 
   if (!resultData) {

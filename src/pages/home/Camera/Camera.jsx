@@ -20,13 +20,15 @@ export const Camera = () => {
 
   const navigateToResults = () => {
     if (apiResult !== null) {
+      setTimeout(() => {}, 100);
       navigate("/results", { state: { resultData: apiResult } });
+      console.log("navigate results: ", apiResult);
     }
   };
 
   const handleCapture = (imageSrc) => {
     console.log("imgString");
-    dispatch(setImage(imageSrc));
+    // dispatch(setImage(imageSrc));
     setImgCam(imageSrc);
   };
 
@@ -38,7 +40,6 @@ export const Camera = () => {
         const response = await fetchApi(selectedCoin, isTight, imgCam);
         console.log("Respuesta de la API:", response.data);
         setApiResult(response.data);
-        navigateToResults();
       } else {
         console.error("Error: imgCam es null");
       }
@@ -84,6 +85,7 @@ export const Camera = () => {
                   const imageSrc = getScreenshot();
                   handleCapture(imageSrc);
                   console.log(imageSrc);
+                  navigateToResults();
                 }}
               >
                 Capturar imagen
