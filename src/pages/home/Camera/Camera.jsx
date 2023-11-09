@@ -1,64 +1,44 @@
+import React from "react";
 import Webcam from "react-webcam";
 import "./CameraStyle.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/LogoFooter1.png";
-import { setImage, selectAttributes } from "../../../redux/atributesSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { fetchApi } from "../../../services/apiCalls";
+import { selectAttributes } from "../../../redux/atributesSlice";
 
 const videoConstraints = {
   facingMode: "user",
 };
 
 export const Camera = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const attributes = useSelector(selectAttributes);
   const [apiResult, setApiResult] = useState(null);
   const [imgCam, setImgCam] = useState(null);
 
-  const navigateToResults = () => {
-    if (apiResult !== null) {
-      setTimeout(() => {}, 100);
-      navigate("/results", { state: { resultData: apiResult } });
-      console.log("navigate results: ", apiResult);
-    }
-  };
-
-  const handleCapture = (imageSrc) => {
-    console.log("imgString");
-    // dispatch(setImage(imageSrc));
-    setImgCam(imageSrc);
-  };
-
-  const calculateParam = async () => {
+  const handleCapture = async () => {
     try {
       const { selectedCoin, isTight } = attributes;
+      const imageSrc = webcamRef.current.getScreenshot();
 
-      if (imgCam !== null) {
-        const response = await fetchApi(selectedCoin, isTight, imgCam);
+      if (imageSrc !== null) {
+        setImgCam(imageSrc);
+        const response = await fetchApi(selectedCoin, isTight, imageSrc);
         console.log("Respuesta de la API:", response.data);
         setApiResult(response.data);
+        navigate("/results", { state: { resultData: response.data } });
+        console.log("navigate results: ", response.data);
       } else {
-        console.error("Error: imgCam es null");
+        console.error("imageSrc es null");
       }
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (imgCam !== null) {
-        calculateParam();
-      }
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [imgCam, attributes]);
+  const webcamRef = React.useRef(null);
 
   return (
     <>
@@ -77,24 +57,14 @@ export const Camera = () => {
             audio={false}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
-          >
-            {({ getScreenshot }) => (
-              <button
-                id="screenshotButton"
-                onClick={() => {
-                  const imageSrc = getScreenshot();
-                  handleCapture(imageSrc);
-                  console.log(imageSrc);
-                  navigateToResults();
-                }}
-              >
-                Capturar imagen
-              </button>
-            )}
-          </Webcam>
+            ref={webcamRef}
+          />
+          <button id="screenshotButton" onClick={handleCapture}>
+            Capturar imagen
+          </button>
         </div>
         <div id="logoCamera">
-          <img id="camLogo" src={logo}></img>
+          <img id="camLogo" src={logo} alt="Logo"></img>
         </div>
       </div>
     </>
