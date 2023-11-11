@@ -1,5 +1,5 @@
 import "./ResultsStyles.css";
-import Logo from "../../assets/LogoFooter1.png";
+import Logo from "../../assets/logoWhite.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Results = () => {

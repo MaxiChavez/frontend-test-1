@@ -3,10 +3,11 @@ import Webcam from "react-webcam";
 import "./CameraStyle.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../../assets/LogoFooter1.png";
+import logo from "../../../assets/onlyLogo.png";
 import { useSelector } from "react-redux";
 import { fetchApi } from "../../../services/apiCalls";
 import { selectAttributes } from "../../../redux/atributesSlice";
+import logoWhite from "../../../assets/logoWhite.png";
 
 const videoConstraints = {
   facingMode: "user",
@@ -43,28 +44,31 @@ export const Camera = () => {
   return (
     <>
       <div id="pageCamera">
-        <button
-          id="returnButton"
-          onClick={() => {
-            navigate("/");
+        <Webcam
+          id="camera"
+          audio={false}
+          screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
+          ref={webcamRef}
+          onUserMedia={() => {
+            document.getElementById("camera").style.backgroundImage = 'url("")';
           }}
-        >
-          Volver
-        </button>
-        <div id="web">
-          <Webcam
-            id="camera"
-            audio={false}
-            screenshotFormat="image/jpeg"
-            videoConstraints={videoConstraints}
-            ref={webcamRef}
-          />
+        />
+        <div id="bothButtons">
+          <button
+            id="returnButton"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Volver
+          </button>
           <button id="screenshotButton" onClick={handleCapture}>
             Capturar imagen
           </button>
         </div>
         <div id="logoCamera">
-          <img id="camLogo" src={logo} alt="Logo"></img>
+          <img id="camWhite" src={logoWhite} alt="Logo"></img>
         </div>
       </div>
     </>
