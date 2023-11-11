@@ -6,10 +6,11 @@ import uno from "../../../assets/1.png";
 import cincuenta from "../../../assets/50.png";
 import veinte from "../../../assets/20.png";
 import cinco from "../../../assets/5.png";
-import hand from "../../../assets/hand.png";
+import hand from "../../../assets/handhd.png";
 import checking from "../../../assets/checking.png";
 import { useDispatch } from "react-redux";
 import { setAttributes } from "../../../redux/atributesSlice";
+import logoFooter from "../../../assets/LogoFooter1.png";
 
 const HomeContent = () => {
   const navigate = useNavigate();
@@ -130,6 +131,9 @@ const HomeContent = () => {
               Siguiente
             </button>
           </div>
+        </div>
+        <div id="footer">
+          <img id="logoFooter" src={logoFooter} alt="Logo empresarial" />
         </div>
       </div>
     </>

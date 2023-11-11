@@ -95,8 +95,8 @@ Este proyecto se encuentra bajo licencia de "Maxi Chavez"
 
 Para conseguir mi objetivo he recopilado información de:
 
-- Ejemplos de projectos anteriores.
-- Documentacion oficial.
+- Documentacion oficial: https://react.dev/learn
+- Ejemplos de projectos anteriores: https://github.com/MaxiChavez
 - ...
 
 ## Herramientas para el desarrollo:
@@ -104,8 +104,10 @@ Para conseguir mi objetivo he recopilado información de:
 - Postman => Para probar la api.
 - Vite => Para iniciar el projecto (https://vitejs.dev/)
 - React-webcam
-- Postman
 - Axios
+- Para el fondo en las vistas Camera y Results: https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/
+- Para el div con diseño cristal opaco: https://css.glass/
+- Para el sombreado de los divs: https://calculado.net/box-shadow-generator-css
 
 ## Desarrollo:
 

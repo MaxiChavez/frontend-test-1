@@ -102,11 +102,6 @@
 
 @media (min-width: 1410px) {
   #screenshotButton {
-    position: absolute;
-    z-index: 1;
-    right: 100em;
-    top: 580px;
-
     width: 156.5px;
 
     height: 44px;
@@ -132,11 +127,6 @@
     padding-left: 1em;
   }
   #screenshotButton {
-    position: absolute;
-    z-index: 1;
-    right: 750px;
-    top: 580px;
-
     width: 156.5px;
 
     height: 44px;
