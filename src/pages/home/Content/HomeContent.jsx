@@ -1,16 +1,16 @@
 import "./HomeContentStyle.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import dos from "../../../assets/2.png";
-import uno from "../../../assets/1.png";
-import cincuenta from "../../../assets/50.png";
-import veinte from "../../../assets/20.png";
-import cinco from "../../../assets/5.png";
-import hand from "../../../assets/handHd.png";
-import checking from "../../../assets/checking.png";
+import dos from "../../../assets/2.webp";
+import uno from "../../../assets/1.webp";
+import cincuenta from "../../../assets/50.webp";
+import veinte from "../../../assets/20.webp";
+import cinco from "../../../assets/5.webp";
+import hand from "../../../assets/handHd.webp";
+import checking from "../../../assets/checking.webp";
 import { useDispatch } from "react-redux";
 import { setAttributes } from "../../../redux/atributesSlice";
-import logoFooter from "../../../assets/LogoFooter1.png";
+import logoFooter from "../../../assets/LogoFooter1.webp";
 
 const HomeContent = () => {
   const navigate = useNavigate();
