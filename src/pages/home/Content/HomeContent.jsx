@@ -6,7 +6,7 @@ import uno from "../../../assets/1.png";
 import cincuenta from "../../../assets/50.png";
 import veinte from "../../../assets/20.png";
 import cinco from "../../../assets/5.png";
-import hand from "../../../assets/handhd.png";
+import hand from "../../../assets/handHd.png";
 import checking from "../../../assets/checking.png";
 import { useDispatch } from "react-redux";
 import { setAttributes } from "../../../redux/atributesSlice";
