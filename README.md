@@ -5,6 +5,7 @@
   <ol>
     <li><a href="#objetivo-🎯">Objetivo</a></li>
     <li><a href="#sobre-el-proyecto-🔎">Sobre el proyecto</a></li>
+    <li><a href="#deploy-🚀">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#instalación-en-local">Instalación</a></li>
     <li><a href="#vistas">Vistas</a></li>
@@ -33,6 +34,12 @@ Se ha dado especial énfasis a la parte visual del proyecto para respetar un dis
 
 El proyecto busca cumplir con los requisitos solicitados para el Test.
 
+## Deploy 🚀
+
+<div align="center">
+    <a href="https://frontend-test-1.vercel.app/"><strong>Url a producción </strong></a>🚀🚀🚀
+</div>
+
 ## Stack
 
 <div align="center">
@@ -57,13 +64,13 @@ El proyecto busca cumplir con los requisitos solicitados para el Test.
 ## Vistas
 
 Landing.
-<img src="./src/assets/ViewAiteca.png">
+<img src="./src/assets/mainParams.png">
 
 Cam.
-<img src="./src/assets/Cam-View.png">
+<img src="./src/assets/CameraWhite.png">
 
 Results.
-<img src="./src/assets/Results-view.png">
+<img src="./src/assets/ResultsWhite.png">
 
 ## Contribuciones
 
