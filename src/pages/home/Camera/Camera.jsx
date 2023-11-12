@@ -177,6 +177,7 @@
 
 ///////////
 import { useState, useEffect, useRef } from "react";
+import "./CameraStyle.css";
 import Webcam from "react-webcam";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
