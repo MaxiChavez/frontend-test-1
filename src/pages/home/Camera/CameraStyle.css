@@ -99,7 +99,18 @@
 #camWhite {
   padding: 1px;
 }
+#icon {
+  width: 2em;
+  height: 4em;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
 
+#icon:hover {
+  transform: scale(1.1);
+}
 @media (min-width: 1410px) {
   #screenshotButton {
     width: 156.5px;
