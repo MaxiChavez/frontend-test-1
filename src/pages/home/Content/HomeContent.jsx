@@ -121,20 +121,20 @@ const HomeContent = () => {
             </div>
           </div>
         </section>
+      </div>
 
-        <div id="buttonContinue">
-          <div className="buttonsNextBack">
-            <button id="volver">Volver</button>
-          </div>
-          <div className="buttonsNextBack">
-            <button id="siguiente" onClick={() => NavigateToCamera()}>
-              Siguiente
-            </button>
-          </div>
+      <div id="buttonContinue">
+        <div className="buttonsNextBack">
+          <button id="volver">Volver</button>
         </div>
-        <div id="footer">
-          <img id="logoFooter" src={logoFooter} alt="Logo empresarial" />
+        <div className="buttonsNextBack">
+          <button id="siguiente" onClick={() => NavigateToCamera()}>
+            Siguiente
+          </button>
         </div>
+      </div>
+      <div id="footer">
+        <img id="logoFooter" src={logoFooter} alt="Logo empresarial" />
       </div>
     </>
   );

@@ -63,7 +63,7 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 3em;
+  margin-top: 1em;
   align-items: center;
   justify-items: center;
   gap: 1em;
@@ -100,17 +100,23 @@
   padding: 1px;
 }
 #icon {
-  width: 2em;
-  height: 4em;
-  padding-bottom: 1em;
+  width: 1em;
+  height: 5em;
   display: flex;
   justify-content: center;
   transition: transform 0.3s ease;
+  margin: 0;
+  object-fit: contain;
 }
 
 #icon:hover {
   transform: scale(1.1);
 }
+
+/* #switchCam {
+  width: 1em;
+  height: 1em;
+} */
 @media (min-width: 1410px) {
   #screenshotButton {
     width: 156.5px;
